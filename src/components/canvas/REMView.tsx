@@ -7,12 +7,14 @@ import { Three } from '@/helpers/components/Three'
 
 export const Common = ({ color = '#ffffff' }) => (
   <Suspense fallback={null}>
-    {color && <color attach='background' args={[color]} />}
+    {/* {color && <color attach='background' args={[color]} />} */}
     <ambientLight />
     <pointLight position={[20, 30, 10]} />
     <ambientLight intensity={0.65} />
     <pointLight position={[-10, -10, -10]} />
     <PerspectiveCamera makeDefault position={[0, 0, 6]} />
+    <fog attach="fog" args={['#f0f0f0', 100, 150]} />
+    {/* <color attach="background" args={['#fF00f0']} /> */}
   </Suspense>
 )
 
