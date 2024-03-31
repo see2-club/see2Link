@@ -9,10 +9,11 @@ import FittingRoom from '@/components/svg/FittingRoom';
 
 function See2Tabs() {
   return (
-    <div className="z-50 w-full rounded-2xl px-0 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}>
+    // <div className="z-50 w-full rounded-2xl px-0 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}>
+    <div className="z-50 w-full rounded-2xl px-0 shadow-lg" >
       <div className="flex">
         <div className="group flex-1 items-center">
-          <a href="#Home" className="mx-auto flex w-full items-center justify-center rounded-3xl px-4 pt-2 text-center text-[#9A97AD] group-hover:bg-slate-600  group-hover:text-white">
+          <a href="#Home" className="mx-auto flex w-full items-center justify-center rounded-3xl px-4 pt-2 text-center text-[#9A97AD] group-hover:bg-[#9A97AD]  group-hover:text-white">
             <span className="flex flex-col items-center justify-center p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +31,7 @@ function See2Tabs() {
           </a>
         </div>
         <div className="group flex-1 items-center">
-          <a href="#Profile" className="mx-auto flex w-full items-center justify-center rounded-3xl px-4 pt-2 text-center text-[#9A97AD] group-hover:bg-slate-600  group-hover:text-white">
+          <a href="#Profile" className="mx-auto flex w-full items-center justify-center rounded-3xl px-4 pt-2 text-center text-[#9A97AD] group-hover:bg-[#9A97AD]  group-hover:text-white">
             <span className="flex flex-col items-center justify-center p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +50,7 @@ function See2Tabs() {
           </a>
         </div>
         <div className="group flex-1 items-center">
-          <a href="#FittingRoom" className="mx-auto flex w-full items-center justify-center rounded-3xl px-4 pt-2 text-center text-[#9A97AD] group-hover:bg-slate-600  group-hover:text-white">
+          <a href="#FittingRoom" className="mx-auto flex w-full items-center justify-center rounded-3xl px-4 pt-2 text-center text-[#9A97AD] group-hover:bg-[#9A97AD]  group-hover:text-white">
             <span className="flex flex-col items-center justify-center p-1">
               <FittingRoom className='size-6' />
               <span className="block pb-2 text-xs">Fitting Room</span>

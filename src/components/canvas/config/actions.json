@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Default",
+    "file": "/assets/animations/Taunt.fbx"
+  },
+  {
+    "name": "Sitting",
+    "file": "/assets/animations/Sitting Laughing.fbx"
+  },
+  {
+    "name": "Dancing Twerk",
+    "file": "/assets/animations/Dancing Twerk.fbx"
+  },
+  {
+    "name": "Left Turn 90",
+    "file": "/assets/animations/left turn 90.fbx"
+  },
+  {
+    "name": "Right Turn 90",
+    "file": "/assets/animations/right turn 90.fbx"
+  },
+  {
+    "name": "Walking",
+    "file": "/assets/animations/walking.fbx"
+  },
+  {
+    "name": "Running",
+    "file": "/assets/animations/running.fbx"
+  },
+  {
+    "name": "Jump",
+    "file": "/assets/animations/jump.fbx"
+  },
+  {
+    "name": "Idle",
+    "file": "/assets/animations/idle.fbx"
+  },
+  {
+    "name": "Right Turn",
+    "file": "/assets/animations/right turn.fbx"
+  },
+  {
+    "name": "Right Strafe",
+    "file": "/assets/animations/right strafe.fbx"
+  },
+  {
+    "name": "Left Turn",
+    "file": "/assets/animations/left turn.fbx"
+  },
+  {
+    "name": "Left Strafe",
+    "file": "/assets/animations/left strafe.fbx"
+  },
+  {
+    "name": "Dancing Twerk",
+    "file": "/assets/animations/Dancing Twerk.fbx"
+  },
+  {
+    "name": "Right Strafe Walking",
+    "file": "/assets/animations/right strafe walking.fbx"
+  },
+  {
+    "name": "Left Strafe Walking",
+    "file": "/assets/animations/left strafe walking.fbx"
+  }
+]

@@ -26,11 +26,11 @@ const View = dynamic(() => import('@/components/canvas/REMView').then((mod) => m
     </div>
   ),
 })
-const Common = dynamic(() => import('@/components/canvas/REMView').then((mod) => mod.Common), { ssr: false })
+const REMavatar = dynamic(() => import('@/components/canvas/REMView').then((mod) => mod.REMavatar), { ssr: false })
 
 function FittingRoomPage() {
   return (
-    <div className='flex size-full flex-col'>
+    <div className='flex  size-full flex-col '>
       {/* <Image
         className='FittingRoomBG'
         src="/img/FittingRoomBG.png"
@@ -40,48 +40,23 @@ function FittingRoomPage() {
         layout='fill'
         objectFit='cover'
       /> */}
-      <Image
-        className='FittingRoomBG'
-        alt="Mountains"
-        src="/img/FittingRoomBG.png"
-        // placeholder="blur"
-        quality={100}
-        fill
-        sizes="100vh"
-        style={{
-          zIndex: -2,
-          marginTop: "20%",
-          objectFit: "cover",
-        }}
-      />
+
       <FittingRoomREMLogo className='fixed left-1/2 top-1/2 z-[-1] w-full -translate-x-1/2 -translate-y-1/2' />
-      <div className='fixed right-4 top-1/2 z-30 size-8 -translate-y-1/2 rotate-90 '>
+      <div className='fixed right-4 top-1/2 z-30 flex size-8 -translate-y-1/2 rotate-90 flex-row'>
         <FittingSwitch />
         <FittingModal >
           <FittingModalTabs />
         </FittingModal>
-      </div>
-      <div className='top-0 z-10 flex w-full flex-col bg-blue-500'>
-        <p className='w-full uppercase'>Next + React Three Fiber</p>
-        <h1 className='my-4 text-5xl font-bold leading-tight'>Next 3D Starter</h1>
-        <p className='mb-8 text-2xl leading-normal'>A minimalist starter for React, React-three-fiber and Threejs.</p>
 
       </div>
-      <View className='z-20 flex h-96 w-full flex-col items-center justify-center'>
-        <Blob />
+
+      <View className='REMavatar z-20 flex size-full min-h-[500px] flex-col items-center justify-center'>
+        {/* <Blob />
         <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
         <Dog scale={2} position={[0, -1.6, 0]} rotation={[0.0, -0.3, 0]} />
-        <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
-        <Common />
+        <Duck route='/blob' scale={2} position={[0, -1.6, 0]} /> */}
+        <REMavatar />
       </View>
-      <div className='z-10  mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
-        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
-          <p className='w-full uppercase'>Next + React Three Fiber</p>
-          <h1 className='my-4 text-5xl font-bold leading-tight'>Next 3D Starter</h1>
-          <p className='mb-8 text-2xl leading-normal'>A minimalist starter for React, React-three-fiber and Threejs.</p>
-        </div>
-      </div>
-
     </div>
   )
 }

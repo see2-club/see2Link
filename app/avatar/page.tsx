@@ -37,47 +37,28 @@ export default function Page() {
   const [activeTab, setActiveTab] = useState('Home');
 
   return (
-    <div className='h-screen w-screen '>
-      <Head>
+    <>
+      {/* <Head>
         <title>This page has a title 🤔</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <div className='flex size-full flex-col'>
+      </Head> */}
+      <div className='flex h-screen  w-full grow flex-col'>
         <See2Navbar />
-        <div className="tab-view-conent flex  h-full flex-col" style={{ overflowY: 'auto' }}>
-          <h1 className=' text-red-400'>activeTab {hash}${activeTab} </h1>
-          <div className={hash === 'Home' ? 'block' : 'hidden'}><Home /></div>
-          <div className={hash === 'Profile' ? 'block' : 'hidden'}><Profile /></div>
-          <div className={hash === 'FittingRoom' ? 'block' : 'hidden'}><FittingRoom /></div>
+        {/* <h1 className=' text-red-400'>activeTab {hash}${activeTab} </h1> */}
+        <div className="tab-view-conent flex flex-1 grow flex-col" style={{ overflowY: 'auto' }}>
+          <div className={`flex w-full grow ${hash === 'Home' ? 'block' : 'hidden'}`}><Home /></div>
+          <div className={`flex w-full grow ${hash === 'Profile' ? 'block' : 'hidden'}`}><Profile /></div>
+          <div className={`flex w-full grow ${hash === 'FittingRoom' ? 'block' : 'hidden'}`}><FittingRoom /></div>
         </div>
         <div className="flex w-full shrink">
           <See2Tabs />
         </div>
       </div>
-      {/* <div className='fixed top-0 w-full'>
-        <See2Navbar />
-      </div>
-      <div className="tab-view-conent" style={{ height: 'calc(100vh - 60px - 40px)', overflowY: 'auto' }}>
-        <h1 className=' text-red-400'>activeTab {hash}${activeTab} </h1>
-        <div className={hash === 'Home' ? 'block' : 'hidden'}><Home /></div>
-        <div className={hash === 'Profile' ? 'block' : 'hidden'}><Profile /></div>
-        <div className={hash === 'FittingRoom' ? 'block' : 'hidden'}><FittingRoom /></div>
-      </div>
-      <div className='fixed bottom-0 w-full bg-black'>
-        <See2Tabs />
-      </div> */}
-      {/* <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
-        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
-          <p className='w-full uppercase'>Next + React Three Fiber</p>
-          <h1 className='my-4 text-5xl font-bold leading-tight'>Next 3D Starter</h1>
-          <p className='mb-8 text-2xl leading-normal'>A minimalist starter for React, React-three-fiber and Threejs.</p>
-        </div>
-      </div> */}
       {/* <View className='absolute top-0 flex h-screen w-full flex-col items-center justify-center'>
         <Blob />
         <Common />
       </View> */}
-    </div>
+    </>
   )
 }

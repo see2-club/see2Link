@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Default",
+    "file": "/assets/model/V0_0913.vrm"
+  },
+  {
+    "name": "SEE2_TEST_REM_Coth",
+    "file": "/assets/model/SEE2_TEST_REM_Coth.vrm"
+  },
+  {
+    "name": "three-vrm-girl",
+    "file": "/assets/model/three-vrm-girl.vrm"
+  },
+  {
+    "name": "REM VRM0.0_0831",
+    "file": "/assets/model/See2_V0_0831.vrm"
+  },
+  {
+    "name": "REM VRM1.0_0831",
+    "file": "/assets/model/See2_V1_0831.vrm"
+  }
+]

@@ -14,7 +14,7 @@ export default function FittingModal({ children, ...props }) {
   return (
     <div className="flex flex-col gap-2">
       <Button onPress={onOpen} className="max-w-fit">Open Modal</Button>
-      <RadioGroup
+      {/* <RadioGroup
         label="Select modal placement"
         orientation="horizontal"
         value={modalPlacement}
@@ -26,7 +26,7 @@ export default function FittingModal({ children, ...props }) {
         <Radio value="center">center</Radio>
         <Radio value="top-center">top-center</Radio>
         <Radio value="bottom-center">bottom-center</Radio>
-      </RadioGroup>
+      </RadioGroup> */}
       <Modal
         isOpen={isOpen}
         placement={modalPlacement as "auto" | "center" | "top" | "bottom" | "top-center" | "bottom-center"}

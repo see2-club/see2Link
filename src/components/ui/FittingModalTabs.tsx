@@ -17,6 +17,18 @@ export default function FittingModalTabs() {
       , items: []
     },
     {
+      id: "Clothes",
+      label: "Clothes",
+      content: "Clothes."
+      , items: []
+    },
+    {
+      id: "bottoms",
+      label: "bottoms",
+      content: "bottoms."
+      , items: []
+    },
+    {
       id: "Accessories",
       label: "Accessories",
       content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
