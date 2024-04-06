@@ -11,6 +11,11 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   disable: process.env.NODE_ENV === 'development',
 })
 
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+})
+
+
 const nextConfig = {
   // uncomment the following snippet if using styled components
   // compiler: {
@@ -18,6 +23,7 @@ const nextConfig = {
   // },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   images: {},
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config, { isServer }) {
     if (!isServer) {
       // We're in the browser build, so we can safely exclude the sharp module
@@ -56,7 +62,7 @@ const nextConfig = {
 const KEYS_TO_OMIT = ['webpackDevMiddleware', 'configOrigin', 'target', 'analyticsId', 'webpack5', 'amp', 'assetPrefix']
 
 module.exports = (_phase, { defaultConfig }) => {
-  const plugins = [[withPWA], [withBundleAnalyzer, {}]]
+  const plugins = [[withMDX], [withPWA], [withBundleAnalyzer, {}]];
 
   const wConfig = plugins.reduce((acc, [plugin, config]) => plugin({ ...acc, ...config }), {
     ...defaultConfig,

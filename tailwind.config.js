@@ -16,5 +16,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [nextui()],
+  plugins: [nextui(), require("daisyui")],
 }
