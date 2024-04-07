@@ -28,7 +28,7 @@ function UserHoldCryptoCard({
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
-                class='size-6 shrink-0 stroke-current'
+                className='size-6 shrink-0 stroke-current'
               >
                 <path
                   stroke-linecap='round'
@@ -99,9 +99,9 @@ function UserHoldCryptoCard({
   }
 
   return (
-    <details className='collapse bg-base-200'>
-      <summary>
-        <div className='flex w-full items-center rounded-box bg-secondary px-4 py-3 text-secondary-content shadow-xl'>
+    <details className='collapse [&_summary]:bg-neutral [&_summary]:open:bg-secondary'>
+      <summary className='rounded-2xl'>
+        <div className='flex w-full items-center px-4 py-3 text-secondary-content shadow-xl'>
           <div className='avatar'>
             <div className='w-12 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100'>
               <img src={imageUrl} />
@@ -131,8 +131,8 @@ function UserHoldCryptoCard({
           {renderEditor()}
         </div>
       </summary>
-      <div className='bg-secondary-focus collapse-content'>
-        <div className='grid grid-cols-2 gap-4 pt-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8'>
+      <div className='collapse-content mt-2 bg-secondary'>
+        <div className='grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8'>
           {nfts.map((nft) => (
             <NFTCard key={nft.tokenId} tokenId={nft.tokenId} name={nft.name} imageUrl={nft.imageUrl} />
           ))}
