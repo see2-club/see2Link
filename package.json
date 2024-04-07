@@ -32,6 +32,7 @@
     "@react-three/postprocessing": "^2.16.2",
     "@studio-freight/lenis": "^1.0.39",
     "@types/mdx": "^2.0.12",
+    "cryptocurrency-icons": "^0.18.1",
     "framer-motion": "^11.0.13",
     "glsl-random": "^0.0.5",
     "leva": "^0.9.35",
