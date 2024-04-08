@@ -67,8 +67,7 @@ jobs:
           push: true
           context: .
           file: ./Dockerfile
-          tags: ${{ env.IMAGE }}:${{ steps.prep.outputs.BUILD_ID }}        
+          tags: ${{ env.IMAGE }}:${{ steps.prep.outputs.BUILD_ID }}, ${{ env.IMAGE }}:latest
 
       # - name: Build Docker Image and Push to GHCR
       #   uses: GlueOps/github-actions-build-push-containers@0.4.0
-    
