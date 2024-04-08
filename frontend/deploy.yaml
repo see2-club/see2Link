@@ -14,7 +14,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: ghcr.io/see2-club/see2-pwa-demo:sid-fix
+      - image: ghcr.io/see2-club/see2-pwa-demo
         name: frontend
         ports:
         - containerPort: 80
