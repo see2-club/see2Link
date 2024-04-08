@@ -9,4 +9,3 @@ commonLabels:
   app.kubernetes.io/name: frontend
 images:
 - name: ghcr.io/see2-club/see2-pwa-demo
-  # newTag: ca4101d
