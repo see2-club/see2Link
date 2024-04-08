@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
         overflow: 'auto',
         touchAction: 'auto',
       }}
+      className='!touch-auto'
     >
       {children}
       <Scene
