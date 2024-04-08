@@ -19,15 +19,15 @@ jobs:
           # submodules: true
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
       - run: git submodule update --init --recursive --remote
-      - name: Use Node.js 18.17
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: 18.17
+          node-version: 18
           cache: "npm"
-      - run: npm ci --legacy-peer-deps
-      - run: npm run build --if-present
+      - run: yarn ci
+      # - run: yarn run build --if-present
 
-      - run: npm run lint
+      - run: yarn run lint
       # - run: "npm run test:unit"
       # - uses: actions/upload-artifact@v2
       #   with:
