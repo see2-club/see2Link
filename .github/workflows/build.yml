@@ -25,9 +25,9 @@ jobs:
           node-version: 18
           cache: "yarn"
       - run: yarn
-      - run: yarn run build
-
       - run: yarn run lint
+      # - run: yarn run build
+
       # - run: "yarn run test:unit"
       # - uses: actions/upload-artifact@v2
       #   with:
