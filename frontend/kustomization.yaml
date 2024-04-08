@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- namespace.yaml
+- deploy.yaml
+- ingress.yaml
+commonLabels:
+  app: frontend
+  app.kubernetes.io/name: frontend
+images:
+- name: ghcr.io/see2-club/see2-pwa-demo
+  newTag: ca4101d

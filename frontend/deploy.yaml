@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - image: ghcr.io/see2-club/see2-pwa-demo:sid-fix
+        name: frontend
+        ports:
+        - containerPort: 80
+        - containerPort: 3000
+        # resources:
+        #   requests:
+        #     memory: "200M"
+        #     cpu: "500m"
+        #   limits:
+        #     memory: "500M"
+        #     cpu: "1"
+      imagePullSecrets:
+        - name: ghcr-login-secret
