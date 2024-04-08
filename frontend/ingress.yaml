@@ -35,6 +35,11 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location "/assets/" {
+        proxy_pass http://see2-solana.s3.amazonaws.com/assets/;
+        proxy_set_header Host ee2-solana.s3.amazonaws.com;
+      }
 spec:
   rules:
   - host: link.see2.club
