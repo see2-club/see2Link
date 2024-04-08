@@ -1,16 +1,20 @@
-kind: Service
-apiVersion: v1
-metadata:
-  name: frontend-assets
-spec:
-  type: ExternalName
-  externalName: see2-solana.s3.amazonaws.com
-  ports:
-    - name: http
-      protocol: TCP
-      port: 443
-      targetPort: 443
----
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: frontend-assets
+#   namespace: frontend
+# spec:
+#   type: ExternalName
+#   externalName: see2-solana.s3.amazonaws.com
+#   # frontend-assets.frontend.svc.cluster.local
+#   # https://see2-solana.s3.amazonaws.com/assets/model/V0_0913.vrm
+#   # https://see2-solana.s3-website-us-east-1.amazonaws.com/assets/
+#   # https://s3.amazonaws.com/see2-solana/assets/model/V0_0913.vrm
+#   ports:
+#     - name: http
+#       protocol: TCP
+#       port: 80
+# ---
 apiVersion: v1
 kind: Service
 metadata:
@@ -33,25 +37,34 @@ metadata:
   labels:
     name: frontend
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+    networking.gke.io/managed-certificates: managed-cert
+    # nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+    # nginx.ingress.kubernetes.io/rewrite-target: "/assets/$2"
+    # nginx.ingress.kubernetes.io/use-regex: "true"
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     nginx.ingress.kubernetes.io/server-snippet: |
-      location "/assets/" {
-        proxy_pass http://see2-solana.s3.amazonaws.com/assets/;
-        proxy_set_header Host ee2-solana.s3.amazonaws.com;
+      location /assets/ {
+        proxy_set_header Host             see2-solana.s3.amazonaws.com;
+        proxy_http_version     1.1;
+        proxy_buffering        off;
+        proxy_ignore_headers   "Set-Cookie";
+        proxy_hide_header      x-amz-id-2;
+        proxy_hide_header      x-amz-request-id;
+        proxy_hide_header      x-amz-meta-s3cmd-attrs;
+        proxy_hide_header      Set-Cookie;
+        proxy_set_header       Authorization "";
+        proxy_intercept_errors on;
+        rewrite ^/assets/?$ /assets/$1;
+        proxy_pass https://see2-solana.s3.amazonaws.com;
+        break;
       }
 spec:
+  ingressClassName: nginx
   rules:
   - host: link.see2.club
     http:
       paths:
-      # - pathType: Prefix
-      #   path: "/assets"
-      #   backend:
-      #     service:
-      #       name: frontend-assets
-      #       port: 
-      #         name: http
       - pathType: Prefix
         path: /
         backend:
@@ -63,3 +76,11 @@ spec:
   - hosts:
     - link.see2.club
     secretName: frontend-cert
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: managed-cert
+spec:
+  domains:
+    - link.see2.club
