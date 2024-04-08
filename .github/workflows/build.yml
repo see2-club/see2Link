@@ -39,14 +39,6 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Generate build ID
-        id: prep
-        run: |
-            branch=${GITHUB_REF##*/}
-            sha=${GITHUB_SHA::8}
-            ts=$(date +%s)
-            echo "::set-output name=BUILD_ID::${branch}-${sha}-${ts}"
-
       # These are prerequisites for the docker build step
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -65,8 +57,7 @@ jobs:
           push: true
           context: .
           file: ./Dockerfile
-          tags: |
-            ${{ env.IMAGE }}:${{ steps.prep.outputs.BUILD_ID }}        
+          tags: ${{ env.IMAGE }}:${{ github.sha }}-${{ github.run_number }} 
 
       # - name: Build Docker Image and Push to GHCR
       #   uses: GlueOps/github-actions-build-push-containers@0.4.0
