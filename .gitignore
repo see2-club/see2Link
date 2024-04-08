@@ -43,3 +43,5 @@ report.*.json
 
 /public/assets/animations
 /public/assets/model
+/public/assets/*.zip
+/public/assets/*.rar
