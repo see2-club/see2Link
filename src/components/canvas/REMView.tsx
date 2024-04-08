@@ -18,7 +18,7 @@ export const REMavatar = ({ color = '#ffffff' }) => (
     <ambientLight intensity={0.65} />
     <pointLight position={[-10, -10, -10]} /> */}
     <ambientLight intensity={0.5} />
-    <directionalLight position={[10, 10, 10]} angle={0.15} penumbra={1} castShadow shadow-mapSize={[2024, 2024]} />
+    {/* <directionalLight position={[10, 10, 10]} angle={0.15} penumbra={1} castShadow shadow-mapSize={[2024, 2024]} /> */}
     <pointLight position={[10, 0, 0]} />
     {/* <ambientLight intensity={0.65} /> */}
     {/* <PerspectiveCamera makeDefault position={[0, 0, 6]} /> */}

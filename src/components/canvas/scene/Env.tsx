@@ -6,18 +6,18 @@ import { Environment } from '@react-three/drei'
 import { useStore } from '../store/store'; // Replace with the actual path to your store file
 import * as THREE from 'three';
 
-export const CustomCamera = React.memo(({ ...props }) => {
-  const virtualCamera = useRef<THREE.Camera>();
-  return (
-    <>
-      <PerspectiveCamera name="FBO Camera" ref={virtualCamera} position={[0, 1.3, 0.6]} fov={1} aspect={window.innerWidth / window.innerHeight} near={0.1} far={20} />
-      {/* <PerspectiveCamera name="FBO Camera" ref={virtualCamera} position={[0, 1.3, 0.6]} fov={30} aspect={window.innerWidth / window.innerHeight} near={0.1} far={20} /> */}
-      {/* <OrbitControls camera={virtualCamera.current} {...props} enabled={true} screenSpacePanning={true} target={[0.0, 1.0, 0.0]} /> */}
-    </>
-  );
-});
+// export const CustomCamera = React.memo(({ ...props }) => {
+//   const virtualCamera = useRef<THREE.Camera>();
+//   return (
+//     <>
+//       <PerspectiveCamera name="FBO Camera" ref={virtualCamera} position={[0, 1.3, 0.6]} fov={1} aspect={window.innerWidth / window.innerHeight} near={0.1} far={20} />
+//       {/* <PerspectiveCamera name="FBO Camera" ref={virtualCamera} position={[0, 1.3, 0.6]} fov={30} aspect={window.innerWidth / window.innerHeight} near={0.1} far={20} /> */}
+//       {/* <OrbitControls camera={virtualCamera.current} {...props} enabled={true} screenSpacePanning={true} target={[0.0, 1.0, 0.0]} /> */}
+//     </>
+//   );
+// });
 
-CustomCamera.displayName = 'CustomCamera';
+// CustomCamera.displayName = 'CustomCamera';
 
 type PresetType = 'sunset' | 'dawn' | 'night' | 'warehouse' | 'forest' | 'apartment' | 'studio' | 'city' | 'park' | 'lobby';
 

@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import UserHoldCryptoCard from '@/components/hub/page/userHoldCryptoCard'
 import UserHoldNFTCard from '@/components/hub/page/userHoldNFTCard'
 import Tabs from './tabs'
+import Image from 'next/image';
 
 const { faker } = require('@faker-js/faker')
 // or, if desiring a different locale
@@ -36,14 +37,17 @@ function UserInfo() {
           <div className='flex flex-wrap justify-center'>
             <div className='flex w-full justify-center'>
               <div className='relative'>
-                <img
+                <Image
                   src='https://source.unsplash.com/jmURdhtm7Ng/120x120'
-                  className='-ml-18 absolute -m-16 max-w-[150px] rounded-full border-8 border-white align-middle dark:border-gray-800 dark:shadow-xl lg:-ml-16'
+                  alt='Profile Picture'
+                  // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
+                  className=' absolute -m-16 -ml-[72] max-w-[150px] rounded-full border-8 border-white align-middle dark:border-gray-800 dark:shadow-xl lg:-ml-16'
                 />
               </div>
             </div>
           </div>
-          <div className='mt-2 mt-20 text-center'>
+          <div className=' mt-2
+           text-center'>
             <h3 className='mb-1 text-2xl font-bold leading-normal text-gray-700 dark:text-gray-300'>Ariel Cerda</h3>
             <div className='mx-auto flex w-full flex-row justify-center space-x-2 text-center'>
               <svg
@@ -58,7 +62,7 @@ function UserInfo() {
                   clip-rule='evenodd'
                 ></path>
               </svg>
-              <div className='font-mono text-sm text-xl font-bold tracking-wide text-gray-600 dark:text-gray-300'>
+              <div className='font-mono text-sm font-bold tracking-wide text-gray-600 dark:text-gray-300'>
                 Diseñador UI / Front-end
               </div>
             </div>
